@@ -1,0 +1,68 @@
+.dpBlank {
+    background-color: white;
+    cursor: not-allowed;
+}
+
+
+.dpRoot {
+    width: 240px;
+    position:absolute;
+    display:none;
+}
+
+.today {
+    border: 2px double #FF9900 !important;
+}
+
+.dpenable {
+    background-color: #AABBFF;
+}
+
+.dpyellow {
+    background-color: #FFC266;
+}
+
+.dpdisabled {
+    background-color: #B0AEA4;
+}
+
+.dpRoot table {
+    font-size: 13px;
+    width: inherit;
+}
+
+.dpRoot table th {
+    font-size: 12px;
+    border: solid 2px #e8eef4;
+    padding: 2px 3px;
+    background-color: #e8eef4;
+    border-collapse:initial;
+    text-align: center;
+    width: 22px;
+}
+
+.dpRoot table td {
+    color: white;
+    padding: 4px 5px;
+    border: solid 2px #e8eef4;
+}
+
+.dpTitle {
+    padding: 3px 0 0 0;
+}
+
+.dateTD {
+    cursor: pointer;
+}
+
+.selYear {
+    margin-right: 5%;
+    display: none;
+    font-size:14px;
+}
+
+.selMonth {
+    margin-right: 5%;
+    display: none;
+    font-size:14px;
+}

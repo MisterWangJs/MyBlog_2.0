@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MyBlog</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+    <filter-name>MyIpFilter</filter-name>
+    <filter-class>wjs.blog.filter.MyIpFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>MyIpFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <listener>
+    <listener-class>wjs.blog.filter.MyIpListener</listener-class>
+  </listener>
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>wjs.blog.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>PermissionFilter</filter-name>
+    <filter-class>wjs.blog.filter.PermissionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PermissionFilter</filter-name>
+    <url-pattern>/CM/*</url-pattern>
+   <!--  <url-pattern>/CMS/*</url-pattern> -->
+    <url-pattern>/User/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>UserListServlet</servlet-name>
+    <servlet-class>wjs.blog.servlet_user.UserListServlet</servlet-class>
+    <init-param>
+      <param-name>pageSize</param-name>
+      <param-value>15</param-value>
+    </init-param>
+  </servlet>
+</web-app>
